@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 import { create } from 'zustand';
 import { heroVideo, smallHeroVideo } from '../../utils';
 
-// Define the Zustand store
+
 const useStore = create((set) => ({
   videosrc: window.innerWidth < 720 ? smallHeroVideo : heroVideo,
   setVideosrc: (src) => set({ videosrc: src }),
@@ -32,7 +32,8 @@ const Hero = () => {
   }, [handleVideoSrcSet]);
 
   useGSAP(() => {
-    gsap.to('#hero', { opacity: 1, delay: 1.5 });
+    gsap.to('#hero', { opacity: 1, delay: 2 });
+    gsap.to('#cta',{ opacity:1, y:-50, delay:2});
   }, []);
 
   return (
@@ -46,6 +47,11 @@ const Hero = () => {
         <video className='pointer-events-none' autoPlay muted playsInline key={videosrc}>
           <source src={videosrc} type='video/mp4' />
         </video>
+      </div>
+
+      <div id='cta' className='flex flex-col items-center opacity-0  translate-y-20' >
+        <a href="#highlights" className='btn'>Buy</a>
+        <p className='font-normal text-xl'> From ₹5000 month or ₹50,000</p>
       </div>
     </section>
   );
