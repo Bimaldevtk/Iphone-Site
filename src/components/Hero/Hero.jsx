@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 import { create } from 'zustand';
 import { heroVideo, smallHeroVideo } from '../../utils';
 
-// Define the Zustand store
+
 const useStore = create((set) => ({
   videosrc: window.innerWidth < 760 ? smallHeroVideo : heroVideo,
   setVideosrc: (src) => set({ videosrc: src }),
