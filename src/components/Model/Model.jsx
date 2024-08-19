@@ -52,7 +52,7 @@ const Model = () => {
             size={size}
           />  
 
-          <ModelView 
+          {/* <ModelView 
             index={2}
             groupRef={large}
             gsapType="view2"
@@ -60,7 +60,7 @@ const Model = () => {
             setRotationState={setLargeRotation}
             item={model}
             size={size}
-          />
+          /> */}
 
           <Canvas
             className="w-full h-full"
